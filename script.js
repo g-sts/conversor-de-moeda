@@ -18,9 +18,24 @@ async function convertMoney(){
         const data = await response.json()
 
         const rate = data.rates[toCurrency.value]
-        const convertedRate = (amaount.value * rate).toFixed(2)
+        const convertedValue = (amaount.value * rate).toFixed(2)
 
-        console.log(convertedRate)
+        convertedAmount.value = convertedValue
+
+        result.innerHTML = `
+            <div style = "font-size: 1.4rem;">
+                ${amount.value} ${fromCurrency.value} = ${convertedAmount.value} ${toCurrency.value}
+            </div>
+
+            <div>
+                <p style = "font-size: 0.8rem; opacity: 0.8; margin-top:10px;">
+                    Taxa: 1 ${fromCurrency.value} = ${rate} ${toCurrency.value}
+                </p>
+            </div>
+        
+        
+        `
+
     }
 
     catch(error){
