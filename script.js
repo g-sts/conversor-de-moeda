@@ -12,15 +12,19 @@ const API_URL = "https://api.exchangerate-api.com/v4/latest/"
 async function convertMoney(){
 
     loading.style.display = "block"
-    
+    error.style.display = "none"
+    result.style.display = "none"
+
     try{
         const response = await fetch(API_URL + fromCurrency.value)
         const data = await response.json()
 
         const rate = data.rates[toCurrency.value]
-        const convertedValue = (amaount.value * rate).toFixed(2)
+        const convertedValue = (amaount.value * rate)
 
         convertedAmount.value = convertedValue
+
+        result.style.display = "block"
 
         result.innerHTML = `
             <div style = "font-size: 1.4rem;">
@@ -35,12 +39,14 @@ async function convertMoney(){
         
         
         `
-
     }
 
-    catch(error){
-        alert("Falha no servidor")
+    catch(fail){
+        error.style.display = "block"
+        error.innerHTML = `<P>Falha ao converter moeda! Tente novamente</p>`
     }
+
+    loading.style.display = "none"
 
 }
 
