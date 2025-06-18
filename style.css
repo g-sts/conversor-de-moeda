@@ -85,7 +85,7 @@ label{
 }
 
 .converter-btn{
-    background: linear-gradient(45deg, #940f0f, #4b0707);
+    background: linear-gradient(to right, #940f0f, #4b0707);
     color: #fff;
     border: none;
     padding: 15px 30px;
@@ -126,4 +126,22 @@ label{
     font-size: 14px;
     color: #666;
 
+}
+
+.result{
+    background: linear-gradient(to right, #f093fb, #f5576c);
+    padding: 20px;
+    margin-top: 30px;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 12px;
+}
+
+.error{
+    background: linear-gradient(to right, #ff6b6b, #ee2f2f );
+    color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 20px;
 }
