@@ -47,13 +47,13 @@ h1{
 }
 
 .currency-input{
-    flex: 2;
+    flex: 1.9;
     
 
 }
 
 .currency-select{
-    flex: 1;
+    flex: 1.1;
 
 }
 
